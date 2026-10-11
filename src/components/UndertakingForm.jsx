@@ -16,7 +16,6 @@ const EMPTY = {
   email: '',
   college: '',
   teamName: '',
-  isOC: '',
   uploaded: '',
 }
 
@@ -50,7 +49,6 @@ function validate(values) {
   if (!EMAIL_PATTERN.test(values.email.trim())) errors.email = 'Enter a valid email address.'
   if (!values.college.trim()) errors.college = 'Enter your college name.'
   if (!values.teamName.trim()) errors.teamName = 'Enter your team name.'
-  if (!values.isOC) errors.isOC = 'Select Yes or No.'
 
   if (values.uploaded !== 'yes') {
     errors.uploaded = 'Tick this after you have uploaded the scan to Drive.'
@@ -197,7 +195,8 @@ export default function UndertakingForm() {
         <section className="form-card" aria-live="polite">
           <h2>Undertaking received</h2>
           <p className="lead">
-            Your details have been submitted.
+            Your details have been submitted. Remember to upload the signed undertaking to the Drive
+            folder if you have not done so yet.
           </p>
           <button type="button" className="ghost" onClick={reset}>
             Submit another
@@ -270,32 +269,6 @@ export default function UndertakingForm() {
                 error={errors.teamName}
                 className="full"
               />
-
-              <fieldset className="field full choice-field">
-                <legend>Are you OC?</legend>
-                <div className="choice">
-                  {[
-                    ['yes', 'Yes'],
-                    ['no', 'No'],
-                  ].map(([value, text]) => (
-                    <label key={value}>
-                      <input
-                        type="radio"
-                        name="isOC"
-                        value={value}
-                        checked={values.isOC === value}
-                        onChange={handleChange}
-                      />
-                      {text}
-                    </label>
-                  ))}
-                </div>
-                {errors.isOC && (
-                  <span className="error" role="alert">
-                    {errors.isOC}
-                  </span>
-                )}
-              </fieldset>
 
               <fieldset className="field full">
                 <legend>Upload the signed photo of the undertaking</legend>
