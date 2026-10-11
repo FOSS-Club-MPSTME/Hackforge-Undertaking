@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Terminess';
+  src: url('/fonts/TerminessNerdFontMono-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --black: #0a0a0a;
+  --black-soft: #141414;
+  --white: #ffffff;
+  --grey: #9a9a95;
+  --green: #33a852;
+  --green-bright: #4ecb74;
+  --green-dark: #277d40;
+  --error: #ff7a7a;
+  --border-light: rgba(255, 255, 255, 0.16);
+
+  --display: 'Tektur Variable', 'Arial Black', sans-serif;
+  --body: Inter, 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'Terminess', 'SFMono-Regular', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Faint blueprint grid, same as the main page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(78, 203, 116, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(78, 203, 116, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, #000, transparent 70%);
+}
+
+::selection {
+  background: var(--green);
+  color: var(--white);
+}
+
+:focus-visible {
+  outline: 3px solid var(--green-bright);
+  outline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  border-radius: 0;
+}

@@ -1,0 +1,460 @@
+/* ---------- Base (mobile) ---------- */
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem;
+}
+
+/* Title block */
+.title {
+  margin: 0;
+  display: grid;
+  gap: 0.02em;
+  font-family: var(--display);
+  font-variation-settings: 'wght' 900, 'wdth' 82;
+  font-weight: 900;
+  font-size: clamp(3.4rem, 22vw, 5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.title .year {
+  color: var(--green);
+  font-variation-settings: 'wght' 780, 'wdth' 92;
+}
+
+.subtext {
+  margin: 1.1rem 0 0;
+  color: var(--green-bright);
+  font: 700 0.85rem/1.4 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* One box: intro, event flow, tracks */
+.info-box {
+  margin-top: 1.75rem;
+  padding: 1.1rem 1rem;
+  background: var(--black-soft);
+  border: 1px solid var(--border-light);
+  border-left: 6px solid var(--green);
+}
+
+.about-text {
+  margin: 0 0 0.9rem;
+  color: var(--grey);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.flow-label {
+  margin: 1.5rem 0 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-light);
+  color: var(--green-bright);
+  font: 800 0.85rem/1.2 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flow {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.flow-step {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  align-items: start;
+  gap: 0.85rem;
+}
+
+.flow-num {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--green);
+  color: var(--green-bright);
+  font: 700 0.72rem var(--mono);
+}
+
+.flow-step h3 {
+  margin: 0;
+  color: var(--white);
+  font: 700 0.85rem/1.3 var(--mono);
+  text-transform: uppercase;
+}
+
+.flow-when {
+  margin: 0.25rem 0 0;
+  color: var(--green-bright);
+  font: 0.7rem/1.5 var(--mono);
+}
+
+/* Two track one-liners under the overnight hackathon step */
+.tracks {
+  margin: 0.65rem 0 0;
+  padding: 0 0 0 0.9rem;
+  border-left: 2px solid var(--green);
+  color: var(--grey);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.tracks strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Form card */
+.form-card {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: var(--black-soft);
+  border: 1px solid var(--green);
+  box-shadow: 5px 5px 0 var(--green-dark);
+  color-scheme: dark;
+}
+
+.form-card h2 {
+  margin: 0 0 0.4rem;
+  font: 800 1.2rem/1.2 var(--mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-card .lead {
+  margin: 0 0 1.5rem;
+  color: var(--grey);
+  font: 0.78rem/1.5 var(--mono);
+}
+
+.uf .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.field label,
+.field legend {
+  padding: 0;
+  margin-bottom: 0.1rem;
+  font: 700 0.7rem/1.4 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Text-style inputs. 16px font stops iOS zooming on focus. */
+.field input:not([type='radio']):not([type='checkbox']) {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.8rem 0.9rem;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  font: 1rem var(--body);
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field input::placeholder {
+  color: #5d625d;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--green-bright);
+}
+
+.field input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+/* Remove number spinners */
+.field input[type='number']::-webkit-inner-spin-button,
+.field input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.field input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.error {
+  color: var(--error);
+  font: 0.7rem/1.4 var(--mono);
+}
+
+/* Yes / No choice */
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.choice label {
+  flex: 1 1 100px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  font: 0.85rem var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.choice label:has(input:checked) {
+  background: var(--green);
+  color: var(--black);
+  border-color: var(--green);
+}
+
+.choice input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--green);
+}
+
+/* Drive upload step */
+.hint {
+  margin: 0;
+  color: var(--grey);
+  font: 0.75rem/1.5 var(--mono);
+}
+
+.drive-link {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--green);
+  color: var(--green-bright);
+  font: 700 0.8rem var(--mono);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pdf-link {
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  padding: 0.5rem 0;
+  color: var(--green-bright);
+  font: 0.75rem var(--mono);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* Confirmation checkbox */
+.confirm {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  color: var(--white);
+  font: 700 0.72rem/1.4 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.confirm input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--green);
+}
+
+/* Buttons */
+.submit,
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 52px;
+  border: 0;
+  font: 700 0.85rem var(--mono);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 1.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--green);
+  color: var(--black);
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 94% 100%, 0 100%);
+}
+
+.submit:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.ghost {
+  margin-top: 1.25rem;
+  padding: 0.8rem 1.25rem;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+.status {
+  margin: 1.1rem 0 0;
+  font: 0.8rem/1.5 var(--mono);
+}
+
+/* Hover effects only on devices with a mouse, so they don't stick on touch */
+@media (hover: hover) {
+  .choice label:hover {
+    border-color: var(--green-bright);
+  }
+
+  .drive-link:hover {
+    background: var(--green);
+    color: var(--black);
+  }
+
+  .pdf-link:hover {
+    color: var(--white);
+  }
+
+  .submit:hover:not(:disabled) {
+    background: var(--green-bright);
+    transform: translateY(-3px);
+  }
+
+  .ghost:hover {
+    background: var(--white);
+    color: var(--black);
+  }
+}
+
+/* ---------- Tablet and up ---------- */
+
+@media (min-width: 640px) {
+  .page {
+    width: min(760px, 100%);
+    padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 4vw, 2rem) 4rem;
+  }
+
+  .title {
+    font-size: clamp(3.8rem, 13vw, 7.5rem);
+  }
+
+  .subtext {
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+  }
+
+  .info-box {
+    margin-top: 2rem;
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    border-left-width: 8px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .tracks {
+    font-size: 0.88rem;
+  }
+
+  .form-card {
+    margin-top: 2.5rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow: 8px 8px 0 var(--green-dark);
+  }
+
+  .form-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .form-card .lead {
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+  }
+
+  .uf .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.5rem;
+  }
+
+  .field label,
+  .field legend {
+    font-size: 0.72rem;
+  }
+
+  .choice label {
+    flex: 1 1 120px;
+  }
+
+  .drive-link {
+    align-self: flex-start;
+    padding-inline: 1.5rem;
+  }
+
+  .submit {
+    width: auto;
+    margin-top: 2rem;
+    padding: 1.05rem 1.9rem;
+    font-size: 0.9rem;
+  }
+
+  .ghost {
+    font-size: 0.9rem;
+  }
+}
