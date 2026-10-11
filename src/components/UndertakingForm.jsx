@@ -195,8 +195,7 @@ export default function UndertakingForm() {
         <section className="form-card" aria-live="polite">
           <h2>Undertaking received</h2>
           <p className="lead">
-            Your details have been submitted. Remember to upload the signed undertaking to the Drive
-            folder if you have not done so yet.
+            Your details have been submitted. 
           </p>
           <button type="button" className="ghost" onClick={reset}>
             Submit another
